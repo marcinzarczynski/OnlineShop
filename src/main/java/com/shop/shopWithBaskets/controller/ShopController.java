@@ -1,13 +1,15 @@
 package com.shop.shopWithBaskets.controller;
 
-import com.shop.shopWithBaskets.request.CreateBasketRequest;
-import com.shop.shopWithBaskets.response.BasketResponse;
+
+import com.shop.shopWithBaskets.model.basket.BasketResponse;
+import com.shop.shopWithBaskets.model.basket.CreateBasketRequest;
 import com.shop.shopWithBaskets.service.BasketService;
-import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 public class ShopController {

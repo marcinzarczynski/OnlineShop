@@ -1,9 +1,9 @@
 package com.shop.shopWithBaskets.service;
 
 import com.shop.shopWithBaskets.entity.Basket;
+import com.shop.shopWithBaskets.model.basket.CreateBasketRequest;
 import com.shop.shopWithBaskets.repository.BasketRepository;
-import com.shop.shopWithBaskets.request.CreateBasketRequest;
-import com.shop.shopWithBaskets.response.BasketResponse;
+import com.shop.shopWithBaskets.model.basket.BasketResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

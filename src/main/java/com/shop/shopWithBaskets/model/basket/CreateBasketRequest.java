@@ -1,20 +1,18 @@
-package com.shop.shopWithBaskets.request;
+package com.shop.shopWithBaskets.model.basket;
 
-import jakarta.validation.constraints.NotNull;
+import com.shop.shopWithBaskets.entity.Item;
 import lombok.*;
 
 import java.util.List;
 
 @Getter
 @Setter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class CreateBasketRequest {
 
     private String orderId;
     private Float totalPrice;
-    @NotNull(message = "item must be selected")
-    private List<Long> items;
-
+    private List<Item> items;
 }

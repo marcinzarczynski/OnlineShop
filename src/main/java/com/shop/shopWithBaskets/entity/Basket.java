@@ -1,8 +1,9 @@
 package com.shop.shopWithBaskets.entity;
 
-import jakarta.persistence.*;
+
 import lombok.*;
 
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -15,8 +16,13 @@ public class Basket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long basketId;
     private String orderId;
     private Float totalPrice;
-    private List<Long> items;
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    @JoinColumn(name = "item_id")
+    private List<Item> items;
 }
