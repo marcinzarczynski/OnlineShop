@@ -23,6 +23,6 @@ public class Basket {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    @JoinColumn(name = "item_id")
+    @JoinColumn(name = "basket_id")
     private List<Item> items;
 }
