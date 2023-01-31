@@ -13,6 +13,5 @@ import java.util.List;
 public class CreateBasketRequest {
 
     private String orderId;
-    private Float totalPrice;
     private List<Item> items;
 }

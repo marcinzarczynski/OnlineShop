@@ -4,7 +4,6 @@ package com.shop.shopWithBaskets.controller;
 import com.shop.shopWithBaskets.model.basket.BasketResponse;
 import com.shop.shopWithBaskets.model.basket.CreateBasketRequest;
 import com.shop.shopWithBaskets.service.BasketService;
-import com.shop.shopWithBaskets.service.ItemService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -17,17 +16,14 @@ public class ShopController {
 
     final private BasketService basketService;
 
-    final private ItemService itemService;
 
-    public ShopController(BasketService basketService, ItemService itemService) {
+    public ShopController(BasketService basketService) {
         this.basketService = basketService;
-        this.itemService = itemService;
     }
 
 
     @PostMapping("/basket")
     public ResponseEntity<BasketResponse> addBasket(@Valid @RequestBody CreateBasketRequest createBasketRequest){
-        //strzelanie w 3 serwis z informacja o produktach oraz totalprice
         return new ResponseEntity<>(basketService.addBasket(createBasketRequest), HttpStatus.CREATED);
     }
 
