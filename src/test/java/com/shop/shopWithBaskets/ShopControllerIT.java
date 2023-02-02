@@ -1,11 +1,12 @@
 package com.shop.shopWithBaskets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.shop.shopWithBaskets.entity.Basket;
-import com.shop.shopWithBaskets.entity.Item;
 import com.shop.shopWithBaskets.repository.BasketRepository;
 import com.shop.shopWithBaskets.repository.ItemRepository;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -28,7 +29,7 @@ public class ShopControllerIT {
     ObjectMapper objectMapper = new ObjectMapper();
 
     @AfterAll
-    private void cleanUp(){
+    private void cleanUp() {
         itemRepository.deleteAll();
         basketRepository.deleteAll();
     }
@@ -46,12 +47,12 @@ public class ShopControllerIT {
 //    }
 
     @Test
-    private void shouldDeleteBasket(){
-        Assertions.assertEquals(true,true);
+    private void shouldDeleteBasket() {
+        Assertions.assertEquals(true, true);
     }
 
     @Test
-    private void shouldFindByOrderId(){
+    private void shouldFindByOrderId() {
 
     }
 }

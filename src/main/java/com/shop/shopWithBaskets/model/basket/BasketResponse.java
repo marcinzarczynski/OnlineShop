@@ -4,6 +4,7 @@ import com.shop.shopWithBaskets.entity.Basket;
 import com.shop.shopWithBaskets.entity.Item;
 import lombok.*;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Getter
@@ -14,6 +15,7 @@ import java.util.List;
 public class BasketResponse {
 
     private Long id;
+    @NotNull
     private String orderId;
     private Float totalPrice;
     private List<Item> items;

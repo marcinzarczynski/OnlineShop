@@ -9,11 +9,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 @Service
 public class BasketService {
 
     private final BasketRepository basketRepository;
+
+    Logger info;
 
     public BasketService(BasketRepository basketRepository) {
         this.basketRepository = basketRepository;
@@ -24,8 +27,15 @@ public class BasketService {
                 .builder()
                 .orderId(createBasketRequest.getOrderId())
                 .items(createBasketRequest.getItems())
-                .totalPrice(basketValueCalculation(createBasketRequest.getItems()))
+                .totalPrice(isEmpty(createBasketRequest.getItems()))
                 .build()));
+    }
+    private Float isEmpty(List<Item> items){
+        if(items.isEmpty()){
+            return 0F;
+        } else {
+            return (basketValueCalculation(items));
+        }
     }
 
     private Float basketValueCalculation(List<Item> items) {

@@ -3,6 +3,7 @@ package com.shop.shopWithBaskets.model.basket;
 import com.shop.shopWithBaskets.entity.Item;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -13,5 +14,5 @@ import java.util.List;
 public class CreateBasketRequest {
 
     private String orderId;
-    private List<Item> items;
+    private List<Item> items = new ArrayList<>();
 }

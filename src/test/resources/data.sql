@@ -3,8 +3,8 @@ DROP TABLE IF EXISTS basket;
 
 CREATE TABLE basket (
   basket_id int NOT NULL,
-  orderId varchar(50) NOT NULL,
-  total_price FLOAT NOT NULL,
+  order_id varchar(50) NOT NULL,
+  total_price FLOAT,
   item_id int,
   PRIMARY KEY (basket_id)
 );
